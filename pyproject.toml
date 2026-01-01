@@ -1,0 +1,13 @@
+[project]
+name = "agent-system"
+version = "0.1.0"
+description = "Learn to build AI agents from scratch"
+requires-python = ">=3.10"
+dependencies = ["openai", "pydantic"]
+
+[project.optional-dependencies]
+docs = ["mkdocs-material"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["common*"]
