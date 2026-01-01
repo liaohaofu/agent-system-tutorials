@@ -1,9 +1,9 @@
 site_name: AI Agent System — From First Principles
 site_description: Learn to build AI agents from scratch. No frameworks, no magic.
-site_url: https://yourusername.github.io/agent_system/
+site_url: https://liaohaofu.github.io/agent_system/
 
 repo_name: agent_system
-repo_url: https://github.com/yourusername/agent_system
+repo_url: https://github.com/liaohaofu/agent_system
 
 theme:
   name: material
