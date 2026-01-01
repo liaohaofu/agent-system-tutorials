@@ -103,10 +103,10 @@ This gives the LLM context to correct its mistake.
 
 ## Full Implementation
 
-See complete code: [`implementations/01_structured_output/`](../implementations/01_structured_output/)
+See complete code: [`implementations/01_structured_output/`](https://github.com/liaohaofu/agent-system-tutorials/tree/main/implementations/01_structured_output)
 
-- `main.py` — Manual approach (schema in prompt, parse, validate, retry)
-- `main_openai.py` — OpenAI's native structured output API
+- [`main.py`](https://github.com/liaohaofu/agent-system-tutorials/blob/main/implementations/01_structured_output/main.py) — Manual approach (schema in prompt, parse, validate, retry)
+- [`main_openai.py`](https://github.com/liaohaofu/agent-system-tutorials/blob/main/implementations/01_structured_output/main_openai.py) — OpenAI's native structured output API
 
 ## How It Works in Production
 
