@@ -41,7 +41,7 @@ print(response)
 
 | # | Topic | Implementation | Tutorial |
 |---|-------|----------------|----------|
-| 1 | Structured Output | [implementations/01_structured_output/](implementations/01_structured_output/) | _Coming soon_ |
+| 1 | Structured Output | [implementations/01_structured_output/](implementations/01_structured_output/) | [tutorials/01-structured-output/](tutorials/01-structured-output/) |
 | 2 | Tool Use | _Coming soon_ | _Coming soon_ |
 | 3 | Agent Loop | _Coming soon_ | _Coming soon_ |
 
