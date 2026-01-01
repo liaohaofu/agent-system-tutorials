@@ -41,7 +41,7 @@ print(response)
 
 | # | Topic |
 |---|-------|
-| 1 | [Structured Output](docs/01-structured-output.md) |
+| 1 | [Structured Output](01-structured-output.md) |
 | 2 | Tool Use — _Coming soon_ |
 | 3 | Agent Loop — _Coming soon_ |
 
@@ -49,8 +49,7 @@ print(response)
 
 ```
 agent-system-tutorials/
-├── README.md           # You are here
-├── docs/               # Tutorial markdown files
+├── docs/               # Tutorial markdown files (you are here)
 ├── common/             # Shared utilities (LLM wrapper, etc.)
 └── implementations/    # Working Python code for each topic
 ```

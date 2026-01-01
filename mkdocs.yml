@@ -62,22 +62,9 @@ plugins:
   - search
 
 nav:
-  - Home: README.md
+  - Home: index.md
   - Tutorials:
-      - 1. Structured Output: tutorials/01-structured-output/README.md
-  - Implementations:
-      - 1. Structured Output: implementations/01_structured_output/README.md
+      - 1. Structured Output: 01-structured-output.md
 
-# Build to docs/ folder for GitHub Pages
-docs_dir: .
+docs_dir: docs
 site_dir: site
-
-# Exclude files/folders from the build
-exclude_docs: |
-  .venv/
-  .claude/
-  generated/
-  __pycache__/
-  *.pyc
-  .git/
-  site/
