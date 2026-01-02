@@ -65,6 +65,7 @@ nav:
   - Home: index.md
   - Tutorials:
       - 1. Structured Output: 01-structured-output.md
+      - 2. Tool Use: 02-tool-use.md
 
 docs_dir: docs
 site_dir: site

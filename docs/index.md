@@ -42,7 +42,7 @@ print(response)
 | # | Topic |
 |---|-------|
 | 1 | [Structured Output](01-structured-output.md) |
-| 2 | Tool Use — _Coming soon_ |
+| 2 | [Tool Use](02-tool-use.md) |
 | 3 | Agent Loop — _Coming soon_ |
 
 ## Project Structure
