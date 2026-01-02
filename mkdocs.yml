@@ -47,7 +47,7 @@ markdown_extensions:
 
   # Task lists
   - pymdownx.tasklist:
-      custom_checkbox: true
+      clickable_checkbox: true
 
   # Tables
   - tables

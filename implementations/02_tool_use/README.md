@@ -14,7 +14,7 @@
    - LLM returns JSON with tool name + arguments
    - Parse, validate, execute
 
-2. **OpenAI native approach** (`openai_native.py`)
+2. **OpenAI native approach** (`main_openai.py`)
    - Use OpenAI's function calling API
    - Cleaner integration, built-in schema validation
 
@@ -42,14 +42,16 @@ The LLM acts as a "router" — it decides which tool to call and extracts argume
 python main.py
 
 # OpenAI native approach
-python openai_native.py
+python main_openai.py
 ```
 
 ## Example
 
 ```
-User: "What's 25 * 17?"
-LLM decides: calculator(expression="25 * 17")
-Tool returns: 425
-Output to user: 425
+User: What is the current date and time in LA?
+LLM decided to call: get_datetime({"city_name": "America/Los_Angeles"})
+Tool result: 2026-01-01 11:30:45
+
+User: What is 2 + 2?
+LLM (no tool): 4
 ```
