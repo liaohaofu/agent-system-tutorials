@@ -101,6 +101,33 @@ for _ in range(max_retries):
 
 This gives the LLM context to correct its mistake.
 
+**Retry Flow Diagram:**
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant System
+    participant LLM
+    participant Validator
+
+    User->>System: Query + Schema
+    System->>LLM: Prompt with JSON schema
+    LLM->>System: JSON response
+    System->>Validator: Validate response
+
+    alt Valid JSON
+        Validator->>System: ✓ Parsed object
+        System->>User: Return result
+    else Invalid JSON (Retry)
+        Validator->>System: ✗ ValidationError
+        System->>LLM: "Invalid JSON. Error: {e}. Fix and retry."
+        LLM->>System: Corrected JSON
+        System->>Validator: Validate again
+        Validator->>System: ✓ Parsed object
+        System->>User: Return result
+    end
+```
+
 ## Full Implementation
 
 See complete code: [`implementations/01_structured_output/`](https://github.com/liaohaofu/agent-system-tutorials/tree/main/implementations/01_structured_output)

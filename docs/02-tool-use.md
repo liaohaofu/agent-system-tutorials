@@ -26,15 +26,23 @@ In the previous tutorial, we got the LLM to return structured data. Now we use t
 
 A **tool** is just a function the LLM can call. But the LLM doesn't execute the function directly — it tells us which function to call and with what arguments. We execute it.
 
-```
-User → LLM → Tool → User
-        ↓
-   (picks tool + args)
-```
-
 This is "single-shot" tool use. The LLM acts as a **router**: it decides which tool to call and extracts the arguments, but it doesn't reason about the result. That's what the Agent Loop (next tutorial) adds.
 
 **Key insight:** The LLM might not always use a tool. If the user asks "What is 2 + 2?", the LLM can answer directly without calling anything.
+
+**Decision Flow:**
+
+```mermaid
+graph TD
+    A[User Query] --> B[LLM with Tools]
+    B --> C{Decision}
+    C -->|Direct Answer| D[Text Response]
+    C -->|Needs Tool| E[Function Call]
+    E --> F[Execute Tool]
+    F --> G[Tool Result]
+    D --> H[Done]
+    G --> H
+```
 
 ## Key Implementation
 
@@ -115,6 +123,30 @@ elif response.type == "function_call":
 ```
 
 The key here: we print what the LLM decided before executing. This makes the decision visible and debuggable.
+
+**Complete Tool Execution Sequence:**
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant System
+    participant LLM
+    participant Tool
+
+    User->>System: "What time is it in Tokyo?"
+    System->>LLM: Query + Tool definitions
+    LLM->>System: {type: "function_call", name: "get_datetime", params: {city: "Tokyo"}}
+    System->>System: Parse & validate arguments
+    System->>Tool: get_datetime("Tokyo")
+    Tool->>System: "2025-01-02 15:30:00 JST"
+    System->>User: Display result
+
+    Note over User,Tool: Alternative path: Direct answer
+    User->>System: "What is 2 + 2?"
+    System->>LLM: Query + Tool definitions
+    LLM->>System: {type: "text", content: "4"}
+    System->>User: Display "4"
+```
 
 ## Full Implementation
 
