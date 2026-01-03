@@ -5,16 +5,26 @@ LLM decides which tool to call based on user input.
 This shows how to do it yourself: schema in prompt → parse → execute.
 """
 
-
 from datetime import datetime
+from openai import OpenAI
 from pydantic import BaseModel, Field
-from zoneinfo import ZoneInfo
 from typing import Literal
-from common import call_llm
+from zoneinfo import ZoneInfo
+
+
+# --- LLM wrapper ---
+
+client = OpenAI()
+
+
+def call_llm(messages: list[dict], model: str = "gpt-4o-mini") -> str:
+    """Call the LLM and return the response text."""
+    response = client.chat.completions.create(model=model, messages=messages)
+    return response.choices[0].message.content
 
 
 class FunctionCall(BaseModel):
-    name: str = Field(description="Name of the tool")
+    name: str = Field(description="name of the tool")
     parameters: str = Field(description="parameters of the tool")
 
 

@@ -31,10 +31,14 @@ export OPENAI_API_KEY="your-key-here"
 ### 3. Verify it works
 
 ```python
-from common.llm import call_llm
+from openai import OpenAI
 
-response = call_llm([{"role": "user", "content": "Hello!"}])
-print(response)
+client = OpenAI()
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+print(response.choices[0].message.content)
 ```
 
 ## Tutorials
@@ -50,8 +54,7 @@ print(response)
 ```
 agent-system-tutorials/
 ├── docs/               # Tutorial markdown files (you are here)
-├── common/             # Shared utilities (LLM wrapper, etc.)
-└── implementations/    # Working Python code for each topic
+└── implementations/    # Self-contained Python code for each topic
 ```
 
 ## Philosophy

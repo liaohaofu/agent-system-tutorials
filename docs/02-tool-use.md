@@ -75,7 +75,7 @@ The LLM needs to tell us: did it call a tool, or did it answer directly?
 
 ```python
 class FunctionCall(BaseModel):
-    name: str = Field(description="Name of the tool")
+    name: str = Field(description="name of the tool")
     parameters: str = Field(description="parameters of the tool")
 
 class Response(BaseModel):

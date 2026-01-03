@@ -5,9 +5,20 @@ Get reliable JSON from an LLM — the foundation for agent decisions.
 This shows how to do it yourself: schema in prompt → parse → validate → retry.
 """
 
-from common import call_llm
+from openai import OpenAI
 from pydantic import BaseModel, ValidationError
 from typing import Literal
+
+
+# --- LLM wrapper ---
+
+client = OpenAI()
+
+
+def call_llm(messages: list[dict], model: str = "gpt-4o-mini") -> str:
+    """Call the LLM and return the response text."""
+    response = client.chat.completions.create(model=model, messages=messages)
+    return response.choices[0].message.content
 
 SCHEMA_PROMPT_TEMPLATE = """
 {user_query}
