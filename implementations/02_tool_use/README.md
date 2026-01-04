@@ -20,10 +20,10 @@
 
 ## What This Skips (For Later)
 
-- Multiple sequential tool calls → Agent Loop (03)
-- Feeding results back to LLM for follow-up reasoning → Agent Loop (03)
-- Tool registry with multiple tools → Part 2
-- Error handling / retries → Part 5
+- Multiple sequential tool calls
+- Feeding results back to LLM for follow-up reasoning
+- Tool registry with multiple tools
+- Error handling / retries
 
 ## Key Concept
 

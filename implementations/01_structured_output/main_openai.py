@@ -15,7 +15,7 @@ client = OpenAI()
 def call_llm_with_schema(
     user_query: str,
     schema: type[BaseModel],
-    model: str = "gpt-4o-mini",
+    model: str = "gpt-5",
 ) -> BaseModel:
     """
     Call LLM with structured output using OpenAI's native support.
@@ -31,6 +31,7 @@ def call_llm_with_schema(
 
 
 # --- Example usage ---
+
 
 class MultiChoice(BaseModel):
     answer: Literal["A", "B", "C", "D"]

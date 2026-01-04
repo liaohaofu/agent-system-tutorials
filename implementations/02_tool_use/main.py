@@ -23,6 +23,9 @@ def call_llm(messages: list[dict], model: str = "gpt-4o-mini") -> str:
     return response.choices[0].message.content
 
 
+# --- Core implementation ---
+
+
 class FunctionCall(BaseModel):
     name: str = Field(description="name of the tool")
     parameters: str = Field(description="parameters of the tool")

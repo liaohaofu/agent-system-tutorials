@@ -2,17 +2,9 @@
 
 Learn to build AI agents from scratch. No frameworks, no magic — just Python and an LLM.
 
-> **Status:** Work in progress. Tutorials are being added.
+**[Read the Tutorials →](https://liaohaofu.github.io/agent-system-tutorials/)**
 
-## What You'll Learn
-
-- How agent loops work (and why they matter)
-- Tool interfaces and execution
-- Planning and task decomposition
-- Memory and context management
-- Error handling and self-correction
-
-## Setup
+## Quick Start
 
 ### 1. Clone and install
 
@@ -22,7 +14,7 @@ cd agent_system
 pip install -e .
 ```
 
-### 2. Set your OpenAI API key
+### 2. Set your API key
 
 ```bash
 export OPENAI_API_KEY="your-key-here"
@@ -30,30 +22,14 @@ export OPENAI_API_KEY="your-key-here"
 
 ### 3. Verify it works
 
-```python
-from openai import OpenAI
-
-client = OpenAI()
-response = client.chat.completions.create(
-    model="gpt-4o-mini",
-    messages=[{"role": "user", "content": "Hello!"}]
-)
-print(response.choices[0].message.content)
+```bash
+python implementations/01_structured_output/main.py
 ```
-
-## Tutorials
-
-| # | Topic |
-|---|-------|
-| 1 | [Structured Output](docs/01-structured-output.md) |
-| 2 | [Tool Use](docs/02-tool-use.md) |
-| 3 | Agent Loop — _Coming soon_ |
 
 ## Project Structure
 
 ```
 agent-system-tutorials/
-├── README.md           # You are here
 ├── docs/               # Tutorial markdown files
 └── implementations/    # Self-contained Python code for each topic
 ```
@@ -64,3 +40,11 @@ agent-system-tutorials/
 - **LLM as a component** — The architecture is what we're teaching
 - **Everything inspectable** — See every decision the agent makes
 - **Minimal first** — Start simple, add complexity only when needed
+
+## Status
+
+Work in progress. New tutorials are being added regularly.
+
+## License
+
+MIT

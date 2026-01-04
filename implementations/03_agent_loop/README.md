@@ -7,11 +7,6 @@
 - Termination conditions (final answer vs. continue looping)
 - Safety limits to prevent infinite loops
 
-## Building On
-
-This tutorial reuses the `get_datetime` tool from Tutorial 02.
-The tool code is duplicated here so this example runs standalone.
-
 ## Two Approaches
 
 1. **Manual approach** (`main.py`)
@@ -19,9 +14,9 @@ The tool code is duplicated here so this example runs standalone.
    - Parse LLM output to detect tool calls vs. final answers
    - Append tool results to messages and loop
 
-2. **OpenAI native approach** (`main_openai.py`)
-   - Use OpenAI's conversation API with `tool` role messages
-   - API handles message formatting; you handle the loop
+2. **OpenAI Agent SDK approach** (`main_openai.py`)
+   - Uses OpenAI's Agent SDK to handle the loop internally
+   - Shows how SDKs abstract the loop pattern
 
 ## Key Concept
 
@@ -35,9 +30,9 @@ The difference between Tutorial 02 (single-shot tool use) and this tutorial:
 
 ## What This Skips (For Later)
 
-- Multiple different tools → Tutorial 04 (Tool Registry)
-- Error handling / retries → Part 5 (Reliability)
-- Planning before acting → Part 3 (Autonomous Planning)
+- Parallel tool execution
+- Error handling / retries
+- Planning before acting
 
 ## Usage
 
@@ -45,25 +40,25 @@ The difference between Tutorial 02 (single-shot tool use) and this tutorial:
 # Manual approach
 python main.py
 
-# OpenAI native approach
+# OpenAI Agent SDK approach
 python main_openai.py
 ```
 
 ## Expected Output
 
 ```
-User: What time is it in Tokyo and in LA?
+==================================================
+Query: I have $5, and I want to buy 5 bananas. Is it possible with the current inventory and price?
+==================================================
 
-[Loop iteration 1]
-LLM calls: get_datetime(Tokyo)
-Tool result: 2024-01-15 09:30:00
+[Iteration 1] get_price returned 0.75
+[Iteration 2] get_inventory returned 10
+[Iteration 3] Yes, you can buy 5 bananas! The total cost would be $3.75 (5 × $0.75), which is within your $5 budget, and there are 10 bananas in stock.
 
-[Loop iteration 2]
-LLM calls: get_datetime(LA)
-Tool result: 2024-01-14 16:30:00
+==================================================
+Query: I have $5, and I want to buy 5 pineapples. Is it possible with the current inventory and price?
+==================================================
 
-[Loop iteration 3]
-LLM returns final answer: "It's 9:30 AM in Tokyo and 4:30 PM in LA."
-
-Final answer: It's 9:30 AM in Tokyo and 4:30 PM in LA.
+[Iteration 1] get_price call error: pineapples not found. Available items: ['apple', 'banana', 'orange']
+[Iteration 2] Sorry, pineapples are not available. The available items are: apple, banana, and orange.
 ```

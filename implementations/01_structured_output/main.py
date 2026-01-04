@@ -20,6 +20,9 @@ def call_llm(messages: list[dict], model: str = "gpt-4o-mini") -> str:
     response = client.chat.completions.create(model=model, messages=messages)
     return response.choices[0].message.content
 
+
+# --- Core implementation ---
+
 SCHEMA_PROMPT_TEMPLATE = """
 {user_query}
 
@@ -44,7 +47,7 @@ def call_llm_with_schema(
 
     last_error = None
     for _ in range(max_retries):
-        llm_output = call_llm(messages)
+        llm_output = call_llm(messages, model="gpt-5")
 
         try:
             return schema.model_validate_json(llm_output)
@@ -52,15 +55,18 @@ def call_llm_with_schema(
             last_error = e
             # Add failed attempt to conversation for retry
             messages.append({"role": "assistant", "content": llm_output})
-            messages.append({
-                "role": "user",
-                "content": f"Invalid JSON. Error: {e}. Please fix and try again."
-            })
+            messages.append(
+                {
+                    "role": "user",
+                    "content": f"Invalid JSON. Error: {e}. Please fix and try again.",
+                }
+            )
 
     raise ValueError(f"Failed after {max_retries} attempts. Last error: {last_error}")
 
 
 # --- Example usage ---
+
 
 class MultiChoice(BaseModel):
     answer: Literal["A", "B", "C", "D"]
