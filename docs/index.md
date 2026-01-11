@@ -38,6 +38,7 @@ More importantly, you'll be able to build these systems yourself — and debug t
 | 1 | [Structured Output](01-structured-output.md) | Type-safe LLM responses |
 | 2 | [Tool Use](02-tool-use.md) | LLM that calls functions |
 | 3 | [Agent Loop](03-agent-loop.md) | Autonomous task execution |
+| 4 | [Parallel Tools](04-parallel-tools.md) | Concurrent tool execution |
 
 ## How to Use This Series
 

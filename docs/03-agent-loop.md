@@ -256,4 +256,4 @@ What's missing:
 
 ## What's Next
 
-We have a working agent loop. Next, we'll explore how to package reusable capabilities using **Agent Skills** — a standard for giving agents domain expertise without hardcoding it.
+In the next tutorial, [4. Parallel Tools](04-parallel-tools.md), we'll extend the agent loop to execute multiple independent tools simultaneously — making the agent faster and more efficient.
