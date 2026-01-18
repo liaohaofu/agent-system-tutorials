@@ -75,6 +75,7 @@ nav:
       - 2. Tool Use: 02-tool-use.md
       - 3. Agent Loop: 03-agent-loop.md
       - 4. Parallel Tools: 04-parallel-tools.md
+      - 5. Agent Class: 05-agent-class.md
 
 docs_dir: docs
 site_dir: site

@@ -34,4 +34,4 @@ python implementations/01_structured_output/main_openai.py
 
 ## Tutorial
 
-See the full tutorial: [`tutorials/01-structured-output/`](../docs/01-structured-output/)
+See the full tutorial: [Structured Output](../docs/01-structured-output.md)

@@ -234,3 +234,7 @@ See complete code: [`implementations/04_parallel_tools/`](https://github.com/lia
 - [ ] Ask a question that requires both parallel AND sequential steps
 - [ ] Deliberately break one tool — does the agent still get partial results?
 - [ ] Try with more than 2 parallel calls — does it scale?
+
+## What's Next
+
+In the next tutorial, [5. Agent Class Architecture](05-agent-class.md), we'll refactor this scattered code into clean abstractions — a `Tool` class, `ToolRegistry`, and `Agent` class that make the code more maintainable and reveal what frameworks like LangChain actually do behind the scenes.
