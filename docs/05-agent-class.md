@@ -237,3 +237,7 @@ See complete code: [`implementations/05_agent_class/`](https://github.com/liaoha
 - [ ] Add a `list_tools()` method to the Agent class
 - [ ] Try subclassing `Tool` for tools that need special execution logic
 - [ ] Add logging to see every tool call and result
+
+## What's Next
+
+In the next tutorial, [6. Session Management](06-session-management.md), we'll separate conversation state from agent logic. You'll learn why frameworks decouple Agent from Session, and how to manage context to prevent overflow in long conversations.

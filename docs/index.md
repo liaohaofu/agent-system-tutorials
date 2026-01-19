@@ -40,6 +40,7 @@ More importantly, you'll be able to build these systems yourself — and debug t
 | 3 | [Agent Loop](03-agent-loop.md) | Autonomous task execution |
 | 4 | [Parallel Tools](04-parallel-tools.md) | Concurrent tool execution |
 | 5 | [Agent Class](05-agent-class.md) | Reusable agent architecture |
+| 6 | [Session Management](06-session-management.md) | Conversation state and context management |
 
 ## How to Use This Series
 

@@ -39,10 +39,10 @@ Agent                   # Orchestrates everything
 
 ## What's Skipped (For Later)
 
-- Session management (message history) → Chapter 2.3
-- Streaming responses → Chapter 2.4
-- Persistent memory → Part 5
-- Error recovery / replanning → Part 6
+- Session management (message history)
+- Streaming responses
+- Persistent memory
+- Error recovery / replanning
 
 ## Usage
 
