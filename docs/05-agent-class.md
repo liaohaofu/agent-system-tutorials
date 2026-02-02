@@ -167,7 +167,7 @@ class Agent:
             # ... parse response, execute tools, loop until done
 ```
 
-The `run()` method encapsulates the **agent loop** pattern we built in previous chapters:
+The `run()` method encapsulates the **agent loop** pattern we built in previous tutorials:
 
 ```mermaid
 flowchart LR

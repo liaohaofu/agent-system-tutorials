@@ -41,6 +41,7 @@ More importantly, you'll be able to build these systems yourself — and debug t
 | 4 | [Parallel Tools](04-parallel-tools.md) | Concurrent tool execution |
 | 5 | [Agent Class](05-agent-class.md) | Reusable agent architecture |
 | 6 | [Session Management](06-session-management.md) | Conversation state and context management |
+| 7 | [Agent Skills](07-agent-skills.md) | On-demand knowledge for agents |
 
 ## How to Use This Series
 

@@ -77,6 +77,7 @@ nav:
       - 4. Parallel Tools: 04-parallel-tools.md
       - 5. Agent Class: 05-agent-class.md
       - 6. Session Management: 06-session-management.md
+      - 7. Agent Skills: 07-agent-skills.md
 
 docs_dir: docs
 site_dir: site

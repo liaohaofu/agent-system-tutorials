@@ -208,3 +208,7 @@ See complete code: [`implementations/06_session_management/`](https://github.com
 - [ ] Add a `clear()` method to Session for resetting conversations
 - [ ] Try running the same agent with two different sessions simultaneously
 - [ ] Add timestamps to messages for debugging and potential persistence
+
+## What's Next
+
+In the next tutorial, [7. Agent Skills](07-agent-skills.md), we'll teach the agent new domains on demand — without bloating the system prompt. The key insight: a skill is just a tool that returns instructions instead of data.
