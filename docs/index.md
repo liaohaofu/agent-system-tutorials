@@ -42,6 +42,7 @@ More importantly, you'll be able to build these systems yourself — and debug t
 | 5 | [Agent Class](05-agent-class.md) | Reusable agent architecture |
 | 6 | [Session Management](06-session-management.md) | Conversation state and context management |
 | 7 | [Agent Skills](07-agent-skills.md) | On-demand knowledge for agents |
+| 8 | [Session Persistence](08-session-persistence.md) | Sessions that survive restarts |
 
 ## How to Use This Series
 

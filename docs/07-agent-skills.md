@@ -260,3 +260,7 @@ See complete code: [`implementations/07_agent_skills/`](https://github.com/liaoh
 - [ ] Add a second `register()` call with a different directory to test precedence (last-write-wins)
 - [ ] Compare token usage: put the skill instructions directly in the system prompt vs. using `load_skill` — how much do you save on queries that don't need the skill?
 - [ ] Write a skill that references multiple files in `references/` and watch the agent chain tool calls
+
+## What's Next
+
+In the next tutorial, [8. Session Persistence](08-session-persistence.md), we'll make sessions survive process restarts by persisting conversation history to disk — the first step toward agent memory.

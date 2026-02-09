@@ -78,6 +78,7 @@ nav:
       - 5. Agent Class: 05-agent-class.md
       - 6. Session Management: 06-session-management.md
       - 7. Agent Skills: 07-agent-skills.md
+      - 8. Session Persistence: 08-session-persistence.md
 
 docs_dir: docs
 site_dir: site
